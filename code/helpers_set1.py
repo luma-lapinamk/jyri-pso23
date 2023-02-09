@@ -39,11 +39,11 @@ def plot_and_specify_univariate_gaussian_interactively():
                                            mu=widgets.FloatSlider(min=-2,
                                                                   max=2,
                                                                   step=0.5,
-                                                                  description='r$\mu$'),
+                                                                  description='mu'),
                                            sig=widgets.FloatSlider(min=0.5,
                                                                    max=2,
                                                                    step=0.5,
-                                                                   description='r$\sigma$'))
+                                                                   description='sigma'))
     return interactive_plot
 
 
@@ -140,23 +140,23 @@ def plot_and_specify_bivariate_gaussian_interactively():
                                            mu1=widgets.FloatSlider(min=-2,
                                                                    max=2,
                                                                    step=.5,
-                                                                   description=r'$\mu_1$'),
+                                                                   description='mu_1'),
                                            mu2=widgets.FloatSlider(min=-2,
                                                                    max=2,
                                                                    step=.5,
-                                                                   description=r'$\mu_2$'),
+                                                                   description='mu_2'),
                                            sig1=widgets.FloatSlider(min=.5,
                                                                     max=2,
                                                                     step=.5,
-                                                                    description=r'$\sigma_1$'),
+                                                                    description='sigma_1'),
                                            sig2=widgets.FloatSlider(min=.5,
                                                                     max=2,
                                                                     step=.5,
-                                                                    description=r'$\sigma_2$'),
+                                                                    description='sigma_2'),
                                            rho=widgets.FloatSlider(min=-.75,
                                                                    max=.75,
                                                                    step=.25,
-                                                                   description=r'$\rho$'))
+                                                                   description='rho'))
 
     return interactive_plot
 
