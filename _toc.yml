@@ -6,4 +6,7 @@ parts:
   - caption: Probability, statistics, and information theory
     chapters:
     - file: notebooks/exercises-set1
+  - caption: Optimization
+    chapters:
+    - file: notebooks/exercises-set2
 
