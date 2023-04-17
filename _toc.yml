@@ -9,4 +9,6 @@ parts:
   - caption: Optimization
     chapters:
     - file: notebooks/exercises-set2
-
+  - caption: Applications
+    chapters:
+    - file: notebooks/exercises-set3
