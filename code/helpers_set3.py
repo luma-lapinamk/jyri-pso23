@@ -46,7 +46,7 @@ def plot_dataset(positives, negatives, positives_alpha=0.5, negatives_alpha=0.5)
     ax.scatter(positives[0, :], positives[1, :], marker='v', color='r', alpha=negatives_alpha)
     ax.set_xlabel(r'$x_1$', fontsize=16); ax.set_ylabel(r'$x_2$', fontsize=16)
     ax.set_xlim([-5., 5.]); ax.set_ylim([-5., 5.])
-    plt.close()
+
 
 def create_and_plot_dataset(num_positives, num_negatives, positives_mean, positives_scale,
                             negatives_mean, negatives_scale):
@@ -764,7 +764,6 @@ def create_inference_plot(inputs, parameter_values, probability_threshold, targe
     ax.set_xlabel('$x_1$', fontsize=16)
     ax.set_ylabel('$x_2$', fontsize=16)
     ax.set_title('Classification accuracy: {} %'.format(int(np.round(100*prediction_accuracy))))
-    plt.close()
 
     return probability_threshold
 
