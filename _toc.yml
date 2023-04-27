@@ -12,3 +12,7 @@ parts:
   - caption: Applications
     chapters:
     - file: notebooks/exercises-set3
+  - caption: Examination
+    chapters:
+    - file: notebooks/examination
+
