@@ -2,3 +2,7 @@ numpy
 matplotlib
 ipython
 ipywidgets
+scipy
+seaborn
+pandas
+scikit-learn
