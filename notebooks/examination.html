@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Home examination, April-May 2023 (to be announced) &#8212; Probability, Statistics, and Optimization</title>
+    <title>Home examination, May 2023 &#8212; Probability, Statistics, and Optimization</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Exercise set 3" href="exercises-set3.html" />
@@ -156,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Home examination, April-May 2023 (to be announced)
+   Home examination, May 2023
   </a>
  </li>
 </ul>
@@ -329,23 +331,376 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-0-import-libraries-set-environment-properties-get-and-set-data-u">
+   <u>
+    Task 0: import libraries, set environment properties, get and set data
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-libraries">
+     Import libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-environment-properties-may-be-adjusted">
+     Set environment properties (may be adjusted)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-and-set-data">
+     Get and set data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-1-scatter-plotting-and-histogramming-data-analysis-based-on-them-u">
+   <u>
+    Task 1: Scatter plotting and histogramming data, analysis based on them
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helper-functions-and-definitions">
+     Helper functions and definitions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-a">
+   Task 1 A.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#answer">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-b">
+   Task 1 B.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-2-dimensionality-reduction-and-assessment-u">
+   <u>
+    Task 2: Dimensionality reduction, and assessment
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helper-functions">
+     Helper functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pca-basis-estimation">
+     PCA-basis estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-the-use-of-pca">
+     Analysis of the use of PCA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-3-density-estimation-of-projected-data-modeling-effectiveness-assessment-u">
+   <u>
+    Task 3: Density estimation of projected data, modeling effectiveness assessment
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-projection">
+     Data projection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions-of-helper-functions">
+     Definitions of helper functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-parameter-estimation-and-modeling-effectiveness-assessment">
+     Model parameter estimation and modeling effectiveness assessment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-4-classifying-projected-data-u">
+   <u>
+    Task 4: Classifying projected data
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayes-classifier">
+     Bayes classifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refusing-to-classify-when-there-is-too-much-uncertainty-about-the-prediction-class">
+     Refusing to classify, when there is too much uncertainty about the prediction class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#same-but-with-a-multinomial-logistic-regression-model">
+     Same but with a multinomial logistic regression -model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-5-clustering-data-u">
+   <u>
+    Task 5: Clustering data
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Home examination, April-May 2023 (to be announced)</h1>
+                <h1>Home examination, May 2023</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-0-import-libraries-set-environment-properties-get-and-set-data-u">
+   <u>
+    Task 0: import libraries, set environment properties, get and set data
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-libraries">
+     Import libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-environment-properties-may-be-adjusted">
+     Set environment properties (may be adjusted)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-and-set-data">
+     Get and set data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-1-scatter-plotting-and-histogramming-data-analysis-based-on-them-u">
+   <u>
+    Task 1: Scatter plotting and histogramming data, analysis based on them
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helper-functions-and-definitions">
+     Helper functions and definitions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-a">
+   Task 1 A.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#answer">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-b">
+   Task 1 B.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-2-dimensionality-reduction-and-assessment-u">
+   <u>
+    Task 2: Dimensionality reduction, and assessment
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helper-functions">
+     Helper functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pca-basis-estimation">
+     PCA-basis estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-the-use-of-pca">
+     Analysis of the use of PCA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-3-density-estimation-of-projected-data-modeling-effectiveness-assessment-u">
+   <u>
+    Task 3: Density estimation of projected data, modeling effectiveness assessment
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-projection">
+     Data projection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions-of-helper-functions">
+     Definitions of helper functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-parameter-estimation-and-modeling-effectiveness-assessment">
+     Model parameter estimation and modeling effectiveness assessment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-4-classifying-projected-data-u">
+   <u>
+    Task 4: Classifying projected data
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayes-classifier">
+     Bayes classifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refusing-to-classify-when-there-is-too-much-uncertainty-about-the-prediction-class">
+     Refusing to classify, when there is too much uncertainty about the prediction class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#same-but-with-a-multinomial-logistic-regression-model">
+     Same but with a multinomial logistic regression -model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-task-5-clustering-data-u">
+   <u>
+    Task 5: Clustering data
+   </u>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Answer
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -353,8 +708,925 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="home-examination-april-may-2023-to-be-announced">
-<h1>Home examination, April-May 2023 (to be announced)<a class="headerlink" href="#home-examination-april-may-2023-to-be-announced" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="home-examination-may-2023">
+<h1>Home examination, May 2023<a class="headerlink" href="#home-examination-may-2023" title="Permalink to this headline">#</a></h1>
+<p>Follow instructions on the course’s Moodle workspace on running and submitting the completed notebook.</p>
+<section id="u-task-0-import-libraries-set-environment-properties-get-and-set-data-u">
+<h2><u> Task 0: import libraries, set environment properties, get and set data </u><a class="headerlink" href="#u-task-0-import-libraries-set-environment-properties-get-and-set-data-u" title="Permalink to this headline">#</a></h2>
+<section id="import-libraries">
+<h3>Import libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">colors</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-environment-properties-may-be-adjusted">
+<h3>Set environment properties (may be adjusted)<a class="headerlink" href="#set-environment-properties-may-be-adjusted" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FIGSIZE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="c1"># controls the size of produced figures, adjust if needed</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-and-set-data">
+<h3>Get and set data<a class="headerlink" href="#get-and-set-data" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the iris dataset </span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+
+<span class="c1"># assign dataset data to variables used in analysis</span>
+<span class="n">feature_data</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">feature_labels</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span>
+<span class="n">feature_label_names</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+
+<span class="c1"># create a pandas dataframe to store the data, as well</span>
+<span class="p">[</span><span class="n">num_examples</span><span class="p">,</span> <span class="n">num_data_dimensions</span><span class="p">]</span> <span class="o">=</span> <span class="n">feature_data</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">feature_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="c1"># insert also label data, the information about from which Iris </span>
+<span class="c1"># subspecies are the feature measurements, </span>
+<span class="c1"># given by the data point elements, from.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">feature_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">feature_labels</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># use actual subspecies names instead off number codes</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">feature_label_names</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;subspecies&#39;</span><span class="p">:</span> <span class="n">ii</span><span class="p">},</span> <span class="n">feature_label_names</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># display the dataframe</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="u-task-1-scatter-plotting-and-histogramming-data-analysis-based-on-them-u">
+<h2><u> Task 1: Scatter plotting and histogramming data, analysis based on them </u><a class="headerlink" href="#u-task-1-scatter-plotting-and-histogramming-data-analysis-based-on-them-u" title="Permalink to this headline">#</a></h2>
+<section id="helper-functions-and-definitions">
+<h3>Helper functions and definitions<a class="headerlink" href="#helper-functions-and-definitions" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">histogram_estimation_of_univariate_data_density</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_edge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_edge</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates a normalized histogram of data, to get an approximate density representation.</span>
+<span class="sd">    Inputs:</span>
+<span class="sd">        - data: data</span>
+<span class="sd">        - n_bins: amount of histogram bins to use</span>
+<span class="sd">        - min_edge: smallest considered value in data</span>
+<span class="sd">        - max_edge: largest considered value in data </span>
+<span class="sd">    Outputs:</span>
+<span class="sd">        - bin_centers: centers of the bins</span>
+<span class="sd">        - normalized_bin_counts: normalized bin counts, approximate densities</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n_bins</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">n_bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">min_edge</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">max_edge</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">data_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">data_range</span> <span class="o">=</span> <span class="n">data_max</span><span class="o">-</span><span class="n">data_min</span>
+    <span class="k">if</span> <span class="n">min_edge</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">min_edge</span> <span class="o">=</span> <span class="n">data_min</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">data_range</span>
+    <span class="k">if</span> <span class="n">max_edge</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">max_edge</span> <span class="o">=</span> <span class="n">data_max</span><span class="o">+</span><span class="mf">0.1</span><span class="o">*</span><span class="n">data_range</span>
+
+    <span class="c1"># specify bins</span>
+    <span class="n">bin_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_edge</span><span class="p">,</span> <span class="n">max_edge</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">bin_centers</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">bin_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">bin_edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="c1"># calculate a normalized histogram</span>
+    <span class="p">[</span><span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">_</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bin_edges</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">bin_centers</span><span class="p">,</span> <span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">bin_edges</span>
+
+
+<span class="k">def</span> <span class="nf">estimate_and_plot_histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                <span class="n">data_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_colours</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data_classes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">bin_centers</span><span class="p">,</span> <span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">histogram_estimation_of_univariate_data_density</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n_bins</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n_bins</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n_bins</span><span class="o">=</span><span class="n">bin_centers</span><span class="o">.</span><span class="n">size</span>
+        <span class="n">bin_width</span> <span class="o">=</span> <span class="n">bin_centers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">bin_centers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bin_centers</span><span class="p">,</span> <span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">bin_width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> 
+           <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span> <span class="k">if</span> <span class="n">n_bins</span><span class="o">&lt;=</span> <span class="mi">100</span> <span class="k">else</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+        <span class="n">bin_centers</span><span class="p">,</span> <span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">bin_edges</span> <span class="o">=</span> <span class="n">histogram_estimation_of_univariate_data_density</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n_bins</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">class_index</span><span class="p">,</span> <span class="n">class_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">class_names</span><span class="p">):</span>
+            <span class="p">[</span><span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">_</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data_classes</span><span class="o">==</span><span class="n">class_name</span><span class="p">],</span> <span class="n">bin_edges</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bin_centers</span><span class="p">,</span> <span class="n">normalized_bin_counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">class_colours</span><span class="p">[</span><span class="n">class_index</span><span class="p">,</span> <span class="p">:],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+
+        
+<span class="k">def</span> <span class="nf">estimate_and_plot_marginal_densities</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+                                         <span class="n">data_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_colours</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">n_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_names</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">n_features</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">n_features</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">feature_index</span><span class="p">,</span> <span class="n">feature_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_names</span><span class="p">):</span>
+        <span class="n">estimate_and_plot_histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature_names</span><span class="p">[</span><span class="n">feature_index</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="n">ax</span><span class="p">[</span><span class="n">feature_index</span><span class="p">],</span> 
+                                    <span class="n">feature_names</span><span class="p">[</span><span class="n">feature_index</span><span class="p">],</span> <span class="n">n_bins</span><span class="p">,</span> <span class="n">data_classes</span><span class="p">,</span> <span class="n">class_names</span><span class="p">,</span> <span class="n">class_colours</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">class_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a color map used in plotting</span>
+<span class="n">color_palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">feature_label_marker_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">to_rgb</span><span class="p">(</span><span class="n">color_palette</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">to_rgb</span><span class="p">(</span><span class="n">color_palette</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">to_rgb</span><span class="p">(</span><span class="n">color_palette</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-1-a">
+<h2>Task 1 A.<a class="headerlink" href="#task-1-a" title="Permalink to this headline">#</a></h2>
+<p>Use seaborn’s pairplot-function to look at pairwise depencencies of the features (via scatter plots of feature pairs), and marginal distributions of features (via histograms of features). Use also the histogram estimation as given by the created estimate_and_plot_marginal_densities-function, to investigate the marginal distributions.</p>
+<p>In the ‘Answer’-section below, answer to the the following questions:</p>
+<p>Distribution properties:</p>
+<ul class="simple">
+<li><p>do the estimated marginal distributions appear to be unimodal?</p></li>
+<li><p>does the data appear normally distributed, marginally, jointly?</p></li>
+</ul>
+<p>Amount of bins:</p>
+<ul class="simple">
+<li><p>does the amount of bins used by seaborn.pairplot seem reasonable?</p></li>
+<li><p>are the results sensitive to the the amount of bins used (this can varied in the estimate_and_plot_marginal_densities-function)?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_bins</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># if None, automatic setting based on the amount of datapoints</span>
+<span class="n">estimate_and_plot_marginal_densities</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">n_bins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="answer">
+<h3>Answer<a class="headerlink" href="#answer" title="Permalink to this headline">#</a></h3>
+<p>Input your answers to the cell below.</p>
+</section>
+</section>
+<section id="task-1-b">
+<h2>Task 1 B.<a class="headerlink" href="#task-1-b" title="Permalink to this headline">#</a></h2>
+<p>Now let’s utilize label information, the iris subspecies information, to understand the data better. Utilize the seaborn.pairplot and the created estimate_and_plot_marginal_densities-function in the analysis. In doing marginal density
+estimation, also compare the kernel density estimates by seaborn.pairplot to the histogram-based density estimate curves by the
+estimate_and_plot_marginal_densities-function.</p>
+<p>In the ‘Answer’-section below, answer to the following questions:</p>
+<ul class="simple">
+<li><p>Do the class-specific marginal distributions appear unimodal?</p></li>
+<li><p>Are the class-specific marginal distributions appear more normally distributed than the class-insensitive distributions?</p></li>
+<li><p>Does the amount of class-specific samples appear to be sufficient to construct reasonable histograms?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">diag_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estimate_and_plot_marginal_densities</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_classes</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;subspecies&#39;</span><span class="p">],</span> 
+                                     <span class="n">class_names</span><span class="o">=</span><span class="n">feature_label_names</span><span class="p">,</span> <span class="n">class_colours</span><span class="o">=</span><span class="n">feature_label_marker_colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Answer<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Input your answers to the cell below.</p>
+</section>
+</section>
+<section id="u-task-2-dimensionality-reduction-and-assessment-u">
+<h2><u> Task 2: Dimensionality reduction, and assessment </u><a class="headerlink" href="#u-task-2-dimensionality-reduction-and-assessment-u" title="Permalink to this headline">#</a></h2>
+<p>Here we do principal components analysis (PCA) [see e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">https://en.wikipedia.org/wiki/Principal_component_analysis</a>] to do dimensionality reduction. The data projection it uses aims, e.g., to project data such that (variation in) the data can be described using less dimensions than in the original space. The approach provides mechanisms to project data onto a lower dimension (to the principal components), and also to reconstruct from the lower dimension back to the original space but potentially with error; the projections are linear/affine.</p>
+<p>Basically, a coordinate value of a datapoint in the projected (lower-dimensional) space, is obtained by a linear combination (weighted sum) of the coordinate values in the original space subtracted by the mean coordinate values in the original space; for each principal component coordinate, the combination weights are different, and e.g. the first principle component weights give the direction of highest variance in the data, the second component the direction of second highest variance that is orthogonal to the direction of the first one, the third the direction of third highest variance that is orthogonal to the previous directions, and so on. The reconstruction of a coordinate value from the projection space, is obtained by adding to the mean coordinate value in the original space, a linear combination of the coordinate values in the projection space (the principal components space); for each original space coordinate, the combination weights are different.
+The projection/combination weights can be estimated from the sample covariance matrix, via an eigendecomposition; the eigenvector associated with highest eigenvalue gives the first principle component, the eigenvector associated with the second highest eigenvalue gives the second principle component, and so on; the eigenvalues give the data variance in the direction of the component.</p>
+<p>First estimate a PCA-basis from the data. Then study the effect of the amount of principal components used, to:</p>
+<ul class="simple">
+<li><p>the quality of reconstruction from the projection</p></li>
+<li><p>the class separability in the projection space</p></li>
+<li><p>the easiness of understanding the phenomena in the data.</p></li>
+</ul>
+<p>Do them by executinh the cells below in this section; to change the amount of principle components used, change the value of the
+‘num_pcs’-variable (line between the two lines containing comment ‘CHANGE CODE’).</p>
+<p>In the ‘Answer’-section, answer briefly to the following questions:</p>
+<ul class="simple">
+<li><p>Would we lose a lot of information by using 3 principal components?</p></li>
+<li><p>Would classification performance appear to be effected hugely by considering 2 instead of 3 principal components?</p></li>
+<li><p>Could we reconstruct well from 2 principal components?</p></li>
+</ul>
+<section id="helper-functions">
+<h3>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estimate_principal_component_analysis_basis</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># calculate sample mean of data</span>
+    <span class="n">data_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># center data by subtracting the mean</span>
+    <span class="n">centered_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">-</span><span class="n">data_center</span> 
+    <span class="c1"># calculate covariance matrix</span>
+    <span class="n">sample_covariance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">centered_data</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="n">centered_data</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># eigendecompose covariance matrix to get the principal components</span>
+    <span class="n">principal_component_variances</span><span class="p">,</span> <span class="n">principal_components</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sample_covariance</span><span class="p">)</span>    
+    <span class="k">return</span> <span class="n">data_center</span><span class="p">,</span> <span class="n">principal_component_variances</span><span class="p">,</span> <span class="n">principal_components</span>
+
+
+<span class="k">def</span> <span class="nf">project_data_onto_principal_components</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_center</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">,</span> <span class="n">num_pcs</span><span class="p">):</span>
+    <span class="n">projected_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">data</span><span class="o">-</span><span class="n">data_center</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="n">num_pcs</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">projected_data</span>
+
+
+<span class="k">def</span> <span class="nf">reconstruct_from_principal_components</span><span class="p">(</span><span class="n">projected_data</span><span class="p">,</span> <span class="n">data_center</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">,</span> <span class="n">num_pcs</span><span class="p">):</span>
+    <span class="n">reconstructed_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">projected_data</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="n">num_pcs</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span><span class="o">+</span><span class="n">data_center</span>
+    <span class="k">return</span> <span class="n">reconstructed_data</span>
+
+
+<span class="k">def</span> <span class="nf">assess_reconstruction_error_numerically</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">reconstructed_data</span><span class="p">):</span>
+    <span class="c1"># mean squared-error, MSE, is used as the error metric</span>
+    <span class="n">reconstruction_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">data</span><span class="o">-</span><span class="n">reconstructed_data</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">reconstruction_error</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pca-basis-estimation">
+<h3>PCA-basis estimation<a class="headerlink" href="#pca-basis-estimation" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_center</span><span class="p">,</span> <span class="n">principal_component_variances</span><span class="p">,</span> <span class="n">principal_components</span> <span class="o">=</span> <span class="n">estimate_principal_component_analysis_basis</span><span class="p">(</span><span class="n">feature_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-of-the-use-of-pca">
+<h3>Analysis of the use of PCA<a class="headerlink" href="#analysis-of-the-use-of-pca" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################################################</span>
+<span class="c1"># ----------&gt; CHANGE CODE: VARY THIS, THE AMOUNT OF PRINCIPLE COMPONENTS TO USE</span>
+<span class="n">num_pcs</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># &lt;---------- CHANGE CODE</span>
+<span class="c1">#################################################################################</span>
+
+<span class="c1"># data projecting</span>
+<span class="c1"># -----------------</span>
+
+<span class="c1"># project data onto PCA-space</span>
+<span class="n">projected_data</span> <span class="o">=</span> <span class="n">project_data_onto_principal_components</span><span class="p">(</span><span class="n">feature_data</span><span class="p">,</span> <span class="n">data_center</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">,</span> <span class="n">num_pcs</span><span class="p">)</span>
+<span class="c1"># reconstruct from the PCA-space</span>
+<span class="n">reconstructed_data</span> <span class="o">=</span> <span class="n">reconstruct_from_principal_components</span><span class="p">(</span><span class="n">projected_data</span><span class="p">,</span> <span class="n">data_center</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">,</span> <span class="n">num_pcs</span><span class="p">)</span>
+
+<span class="c1"># assess performance quantitatively </span>
+<span class="c1"># ---------------------------------</span>
+<span class="n">reconstruction_error</span> <span class="o">=</span> <span class="n">assess_reconstruction_error_numerically</span><span class="p">(</span><span class="n">feature_data</span><span class="p">,</span> <span class="n">reconstructed_data</span><span class="p">)</span>    
+
+<span class="c1"># assess performance qualitatively</span>
+<span class="c1"># ---------------------------------</span>
+
+<span class="c1"># create a dataframe to &quot;pairplot&quot; reconstructed data</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">reconstructed_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">feature_labels</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">feature_label_names</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">df2</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;subspecies&#39;</span><span class="p">:</span> <span class="n">ii</span><span class="p">},</span> <span class="n">feature_label_names</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># create a dataframe to &quot;pairplot&quot; projected data </span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">projected_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;PC</span><span class="si">{</span><span class="n">pc_index</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">pc_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_pcs</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">feature_labels</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">feature_label_names</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">df3</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;subspecies&#39;</span><span class="p">:</span> <span class="n">ii</span><span class="p">},</span> <span class="n">feature_label_names</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># &quot;pairplot&quot; reconstructions</span>
+<span class="n">pairplot_reconstructed</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">diag_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;num pcs: </span><span class="si">{</span><span class="n">num_pcs</span><span class="si">}</span><span class="s1">, reconstruction error: </span><span class="si">{</span><span class="n">reconstruction_error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># &quot;pairplot&quot; original data</span>
+<span class="n">pairplot_original</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">diag_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+
+<span class="c1"># &quot;pairplot&quot; projection</span>
+<span class="n">pairplot_projection</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">diag_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Projection&#39;</span><span class="p">);</span>
+
+<span class="c1"># scatter plot also the projection if we use 3 or 2 dimensions, </span>
+<span class="k">if</span> <span class="n">num_pcs</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num_pcs</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="s2">&quot;3d&quot;</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">species_index</span><span class="p">,</span> <span class="n">species_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+            <span class="n">species_rows</span> <span class="o">=</span> <span class="n">feature_labels</span> <span class="o">==</span> <span class="n">species_index</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">species_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">species_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">species_rows</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+                       <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">species_index</span><span class="p">:</span><span class="n">species_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species_label</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;PC3&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data; click the pan-button to be able to change the viewpoint &amp; zoom&#39;</span><span class="p">);</span>
+    <span class="k">elif</span> <span class="n">num_pcs</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">species_index</span><span class="p">,</span> <span class="n">species_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+            <span class="n">species_rows</span> <span class="o">=</span> <span class="n">feature_labels</span> <span class="o">==</span> <span class="n">species_index</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">species_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">species_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+                     <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">species_index</span><span class="p">:</span><span class="n">species_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">species_label</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Answer<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Input your answers to the cell below.</p>
+</section>
+</section>
+<section id="u-task-3-density-estimation-of-projected-data-modeling-effectiveness-assessment-u">
+<h2><u> Task 3: Density estimation of projected data, modeling effectiveness assessment </u><a class="headerlink" href="#u-task-3-density-estimation-of-projected-data-modeling-effectiveness-assessment-u" title="Permalink to this headline">#</a></h2>
+<p>Here, we model data given by a PCA-projection of the original data, using 2 (of the first) principal components, and do a bit of modeling effectiveness assessment. The modeling is by fitting class-specific (Iris subspecies -specific) multivariate normal distributions. The modeling effectiveness assessment here is by qualitative assessment, by observing and analyzing the information in the created plots.</p>
+<p>The codes below provide the functionality for doing the model fitting also also for creating the plots. One of your tasks
+is to modify the ‘estimate_normal_parameters’-function below (in section ‘Definition of helper functions’) that estimates and outputs sample mean vector and sample covariance matrix from its input data: you need to replace the implementation that is provided (lines between the two lines containing comment ‘CHANGE CODE’), by a different one that is your own; you still need to output sample mean and sample covariance. The other task is to do the effectiveness assessment as mentioned above.</p>
+<p>In the ‘Answer’-section, briefly describe i) your code changes, ii) the qualitative assessment of modeling effectiveness.</p>
+<section id="data-projection">
+<h3>Data projection<a class="headerlink" href="#data-projection" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_pcs</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">projected_data</span> <span class="o">=</span> <span class="n">project_data_onto_principal_components</span><span class="p">(</span><span class="n">feature_data</span><span class="p">,</span> <span class="n">data_center</span><span class="p">,</span> <span class="n">principal_components</span><span class="p">,</span> <span class="n">num_pcs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="definitions-of-helper-functions">
+<h3>Definitions of helper functions<a class="headerlink" href="#definitions-of-helper-functions" title="Permalink to this headline">#</a></h3>
+<p>You need to modify the estimate_normal_parameters-function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">mean_vector</span><span class="p">,</span> <span class="n">covariance_matrix</span><span class="p">,</span> <span class="n">num_points</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Gets equiprobable random variable values under a bivariate normal; under </span>
+<span class="sd">    a standard bivariate normal the points away from the mean along a dimension/axis are a </span>
+<span class="sd">    standard deviation away.</span>
+<span class="sd">    </span>
+<span class="sd">    inputs:</span>
+<span class="sd">    -------</span>
+<span class="sd">    mean_vector: 1 x 2 matrix (/row vector),  </span>
+<span class="sd">    covariance_matrix: 2 x 2 matrix</span>
+<span class="sd">    num_points: integer specifying the amount of points to compute</span>
+<span class="sd">    </span>
+<span class="sd">    outputs:</span>
+<span class="sd">    --------</span>
+<span class="sd">    positions: num_points x 2 matrix; the positions of the points</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="p">[</span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">covariance_matrix</span><span class="p">)</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+    <span class="n">positions_standard</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">num_points</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+    <span class="n">positions_standard</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> 
+    <span class="n">positions_standard</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">positions_standard</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)))</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span><span class="o">+</span><span class="n">mean_vector</span>
+    
+    <span class="k">return</span> <span class="n">positions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estimate_normal_parameters</span><span class="p">(</span><span class="n">subspecies_data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Estimates parameters of a multivariate normal distribution. </span>
+<span class="sd">    </span>
+<span class="sd">    Input:</span>
+<span class="sd">        - subspecies data: an array of the subspecies data, rows index examples, columns index dimensions</span>
+<span class="sd">    Output:</span>
+<span class="sd">        - subspecies_mean: sample mean of subspecies data </span>
+<span class="sd">        - subspecies_covariance: sample covariance matrix of subspecies data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#########################################################################################</span>
+    <span class="c1"># ----------&gt; CHANGE CODE: REPLACE WITH YOUR OWN, DIFFERENT IMPLEMENTATION</span>
+    <span class="n">num_subspecies_examples</span> <span class="o">=</span> <span class="n">subspecies_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">subspecies_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">subspecies_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">/</span><span class="n">num_subspecies_examples</span>
+    <span class="n">centered_subspecies_points</span> <span class="o">=</span> <span class="n">subspecies_data</span><span class="o">-</span><span class="n">subspecies_mean</span>
+    <span class="n">subspecies_covariance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">centered_subspecies_points</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span> 
+                                   <span class="n">centered_subspecies_points</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">num_subspecies_examples</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># &lt; --------- CHANGE CODE </span>
+    <span class="c1">#########################################################################################</span>
+    
+    <span class="k">return</span> <span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-parameter-estimation-and-modeling-effectiveness-assessment">
+<h3>Model parameter estimation and modeling effectiveness assessment<a class="headerlink" href="#model-parameter-estimation-and-modeling-effectiveness-assessment" title="Permalink to this headline">#</a></h3>
+<p>Run and do the qualitative assessment based on the created plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_subspecies</span> <span class="o">=</span> <span class="n">feature_label_names</span><span class="o">.</span><span class="n">size</span>
+<span class="n">subspecies_means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">num_subspecies</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">subspecies_covariances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">num_subspecies</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># original data</span>
+<span class="k">for</span> <span class="n">subspecies_index</span><span class="p">,</span> <span class="n">subspecies_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+    <span class="n">subspecies_rows</span> <span class="o">=</span> <span class="n">feature_labels</span> <span class="o">==</span> <span class="n">subspecies_index</span>
+    <span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span> <span class="o">=</span> <span class="n">estimate_normal_parameters</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="p">:])</span>        
+    <span class="n">subspecies_means</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">subspecies_mean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">subspecies_covariances</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">subspecies_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">subspecies_covariance</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">equiprobability_points</span> <span class="o">=</span> <span class="n">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+             <span class="n">color</span><span class="o">=</span><span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="o">+</span><span class="s1">&#39;-gaussian&#39;</span><span class="p">)</span>    
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="p">:],</span> 
+                                                  <span class="n">mean</span><span class="o">=</span><span class="n">subspecies_mean</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> 
+                                                  <span class="n">cov</span><span class="o">=</span><span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>  
+                <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.8</span><span class="o">*</span><span class="n">probabilities</span><span class="o">/</span><span class="n">probabilities</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 1&#39;</span><span class="p">);</span> <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 2&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data modeled with class-specific multivariate normal distributions; </span><span class="se">\n</span><span class="s1"> strength of colour encodes density value, density values on the ellipse points are equal&#39;</span><span class="p">)</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+<span class="n">ylim</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+
+<span class="c1"># samples from the model, i.e. fake data </span>
+<span class="k">for</span> <span class="n">subspecies_index</span><span class="p">,</span> <span class="n">subspecies_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+    <span class="n">num_random_samples_per_class</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">feature_labels</span> <span class="o">==</span> <span class="n">subspecies_index</span><span class="p">))</span>
+    <span class="n">subspecies_mean</span> <span class="o">=</span> <span class="n">subspecies_means</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">subspecies_covariance</span> <span class="o">=</span> <span class="n">subspecies_covariances</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">subspecies_index</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">subspecies_fakedata</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">cov</span><span class="o">=</span><span class="n">subspecies_covariance</span><span class="p">,</span>
+                                  <span class="n">size</span><span class="o">=</span><span class="n">num_random_samples_per_class</span><span class="p">)</span>
+    <span class="n">probabilities_fakedata</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">subspecies_fakedata</span><span class="p">,</span> 
+                                                           <span class="n">mean</span><span class="o">=</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">cov</span><span class="o">=</span><span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">subspecies_fakedata</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">subspecies_fakedata</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>  
+                <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.8</span><span class="o">*</span><span class="n">probabilities_fakedata</span><span class="o">/</span><span class="n">probabilities_fakedata</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="p">);</span>
+    <span class="n">equiprobability_points</span> <span class="o">=</span> <span class="n">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+             <span class="n">color</span><span class="o">=</span><span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="o">+</span><span class="s1">&#39;-gaussian&#39;</span><span class="p">)</span>    
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 1&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 2&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Samples from the model/fake data&#39;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>Answer<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Input your answers to the cell below.</p>
+</section>
+</section>
+<section id="u-task-4-classifying-projected-data-u">
+<h2><u> Task 4: Classifying projected data </u><a class="headerlink" href="#u-task-4-classifying-projected-data-u" title="Permalink to this headline">#</a></h2>
+<p>We first classify the projected data using a Bayes-classifier utilizing the Iris subspecies -specific multivariate Gaussian distributions we fitted in the previous task, and analyze the effectiveness. Probably there will be classification errors.</p>
+<p>We then consider a setting, where the classifier refuses to classify a datapoint if the uncertainty about the class is too high; the uncertainty shall be measured via entropy of the distribution of predicted class probabilities, for the datapoint. This setting is also done with a different classifier model, a multinomial logistic regression model; multinomial logistic regression generalizes logistic regression for multi-class classification problems.</p>
+<p>Run the analyses, with varying uncertainty thresholds; such thresholds are set in two places in the codes below and in each case  they are set between two lines of code containing comment ‘CHANGE CODE: VARY THIS’). In this task and in any other tasks, we have not split data onto separate development and testing sets (like splitting the data onto training, validation, and test portions). Think about how the modeling and analysis should be changed under such more proper setting.</p>
+<p>In the ‘Answer’-section, briefly describe i) the usefulness of the prediction uncertainty quantification, ii) how the modeling, including the threshold setting could be done in a more appropriate way, utilizing the data splitting.</p>
+<section id="bayes-classifier">
+<h3>Bayes classifier<a class="headerlink" href="#bayes-classifier" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classification</span>
+<span class="c1"># --------------</span>
+<span class="n">prior_probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">num_subspecies</span><span class="p">,))</span><span class="o">/</span><span class="n">num_subspecies</span>
+<span class="n">unnormalized_posterior_probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">prior_probabilities</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">]</span><span class="o">*</span><span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">projected_data</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="n">subspecies_means</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">,</span> <span class="p">:],</span> <span class="n">cov</span><span class="o">=</span><span class="n">subspecies_covariances</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">subspecies_index</span><span class="p">])</span> <span class="k">for</span> <span class="n">subspecies_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="p">)])</span>
+<span class="n">classification_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">unnormalized_posterior_probabilities</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Scatter plotting to visualize classifications </span>
+<span class="c1"># ----------------------------------------------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">subspecies_index</span><span class="p">,</span> <span class="n">subspecies_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+    <span class="n">subspecies_rows</span> <span class="o">=</span> <span class="n">feature_labels</span> <span class="o">==</span> <span class="n">subspecies_index</span>
+    <span class="n">num_subspecies_examples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">subspecies_rows</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="p">,</span>
+                <span class="n">edgecolors</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">classification_class</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">],</span> <span class="p">:])</span>
+    <span class="n">subspecies_mean</span> <span class="o">=</span> <span class="n">subspecies_means</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">subspecies_covariance</span> <span class="o">=</span> <span class="n">subspecies_covariances</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">subspecies_index</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">equiprobability_points</span> <span class="o">=</span> <span class="n">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+             <span class="n">color</span><span class="o">=</span><span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="o">+</span><span class="s1">&#39;-gaussian&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 2&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data classified; marker edge colour gives the predicted class; marker fill colour gives the true class&#39;</span><span class="p">)</span>
+
+<span class="c1"># Confusion matrix to visualize classifications</span>
+<span class="c1"># ----------------------------------------------</span>
+
+<span class="c1"># Calculate confusion matrix</span>
+<span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">num_subspecies</span><span class="p">,</span> <span class="n">num_subspecies</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">true_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">classified_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="p">):</span>
+        <span class="n">confusion_matrix</span><span class="p">[</span><span class="n">true_index</span><span class="p">,</span> <span class="n">classified_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">feature_labels</span> <span class="o">==</span> <span class="n">true_index</span><span class="p">,</span> 
+                                                                               <span class="n">classification_class</span> <span class="o">==</span> <span class="n">classified_index</span><span class="p">))</span>
+<span class="n">normalized_confusion_matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Visualize confusion matrix as an image, gray-scale value encodes the numerical value</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">normalized_confusion_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">),</span> <span class="n">feature_label_names</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">),</span> 
+               <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;predicted as &#39;</span><span class="o">+</span><span class="n">feature_label_name</span> <span class="k">for</span> <span class="n">feature_label_name</span> <span class="ow">in</span> <span class="n">feature_label_names</span><span class="p">])</span>
+
+
+<span class="c1"># Append text annotations to show also the numerical values in textual format</span>
+<span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">vertical_pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">jj</span><span class="p">,</span> <span class="n">horizontal_pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">normalized_confusion_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">horizontal_pos</span><span class="p">,</span> <span class="n">vertical_pos</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion matrix&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="refusing-to-classify-when-there-is-too-much-uncertainty-about-the-prediction-class">
+<h3>Refusing to classify, when there is too much uncertainty about the prediction class<a class="headerlink" href="#refusing-to-classify-when-there-is-too-much-uncertainty-about-the-prediction-class" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_uncertainty_based_on_entropy</span><span class="p">(</span><span class="n">probabilities_over_classes_over_rows</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">probabilities_over_classes_over_rows</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">probabilities_over_classes_over_rows</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_posterior_probabilities</span> <span class="o">=</span> <span class="n">unnormalized_posterior_probabilities</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">unnormalized_posterior_probabilities</span><span class="p">,</span> 
+                                                                                 <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">class_uncertainty</span> <span class="o">=</span> <span class="n">get_uncertainty_based_on_entropy</span><span class="p">(</span><span class="n">normalized_posterior_probabilities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># entropy of maximally entropic distribution: -\sum_{c\in [1,..,C]} (1/C)*log(1/C) = -C*(1/C)*log(1/C)=-log(1/C)=log(C)</span>
+<span class="n">max_entropy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">num_subspecies</span><span class="p">)</span> 
+
+<span class="c1"># plot the class uncertainties as measured by the entropies, and also mark the maximum entropy </span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIGSIZE</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">classification_class</span><span class="o">!=</span><span class="n">feature_labels</span><span class="p">],</span> 
+        <span class="n">bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">classification_class</span><span class="o">!=</span><span class="n">feature_labels</span><span class="p">))),</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;incorrect classifications&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">classification_class</span><span class="o">==</span><span class="n">feature_labels</span><span class="p">],</span> 
+        <span class="n">bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">classification_class</span><span class="o">==</span><span class="n">feature_labels</span><span class="p">))),</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;correct classifications&#39;</span><span class="p">);</span>
+<span class="n">ylim</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">max_entropy</span><span class="p">,</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;maximally entropic distribution&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Entropies of predicted class probabilities&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uncertain_class_color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
+<span class="n">feature_label_marker_colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">feature_label_marker_colors</span><span class="p">,</span> <span class="n">uncertain_class_color</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classification </span>
+<span class="c1"># -------------------------------------------------------------------------</span>
+
+<span class="c1">################################################################################################</span>
+<span class="c1"># ----------&gt; CHANGE CODE: VARY THIS</span>
+<span class="n">entropy_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">classification_class</span><span class="o">!=</span><span class="n">feature_labels</span><span class="p">])</span> <span class="c1"># &quot;cheat&quot;</span>
+<span class="c1"># &lt;--------- CHANGE CODE: VARY THIS</span>
+<span class="c1">################################################################################################</span>
+
+<span class="n">classification_class_adjusted</span> <span class="o">=</span> <span class="n">classification_class</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">too_uncertain</span> <span class="o">=</span> <span class="n">class_uncertainty</span> <span class="o">&gt;=</span> <span class="n">entropy_threshold</span> 
+<span class="n">classification_class_adjusted</span><span class="p">[</span><span class="n">too_uncertain</span><span class="p">]</span><span class="o">=</span><span class="n">num_subspecies</span>
+
+<span class="c1"># Scatter plotting to visualize classifications </span>
+<span class="c1"># ----------------------------------------------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">subspecies_index</span><span class="p">,</span> <span class="n">subspecies_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+    <span class="n">subspecies_rows</span> <span class="o">=</span> <span class="n">feature_labels</span> <span class="o">==</span> <span class="n">subspecies_index</span>
+    <span class="n">num_subspecies_examples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">subspecies_rows</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+               <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span>
+               <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">]</span><span class="o">/</span><span class="n">max_entropy</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="p">,</span>
+               <span class="n">edgecolors</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">classification_class_adjusted</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">],</span> <span class="p">:]);</span>    
+    <span class="n">subspecies_mean</span> <span class="o">=</span> <span class="n">subspecies_means</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">subspecies_covariance</span> <span class="o">=</span> <span class="n">subspecies_covariances</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">subspecies_index</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">equiprobability_points</span> <span class="o">=</span> <span class="n">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+             <span class="n">color</span><span class="o">=</span><span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="o">+</span><span class="s1">&#39;-gaussian&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 1&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 2&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data classified: </span><span class="se">\n</span><span class="s1"> colour indicates predicted class, </span><span class="se">\n</span><span class="s1"> certainty in prediction encoded by colour strength, </span><span class="se">\n</span><span class="s1"> black edges indicate too much uncertainty and thus refusal to classify&#39;</span><span class="p">);</span>
+
+<span class="c1"># Confusion matrix to visualize classifications</span>
+<span class="c1"># ----------------------------------------------</span>
+
+<span class="c1"># calculate confusion matrix</span>
+<span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">num_subspecies</span><span class="p">,</span> <span class="n">num_subspecies</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">true_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">classified_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">confusion_matrix</span><span class="p">[</span><span class="n">true_index</span><span class="p">,</span> <span class="n">classified_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">feature_labels</span> <span class="o">==</span> <span class="n">true_index</span><span class="p">,</span> <span class="n">classification_class_adjusted</span> <span class="o">==</span> <span class="n">classified_index</span><span class="p">))</span>
+<span class="n">normalized_confusion_matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Visualize confusion matrix as an image, gray-scale value encodes the numerical value</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">normalized_confusion_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">),</span> <span class="n">feature_label_names</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;predicted as &#39;</span><span class="o">+</span><span class="n">feature_label_name</span> <span class="k">for</span> <span class="n">feature_label_name</span> <span class="ow">in</span> <span class="n">feature_label_names</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;too uncertain to classify&#39;</span><span class="p">])</span>
+
+<span class="c1"># Append text annotations to show also the numerical values in textual format</span>
+<span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">vertical_pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">jj</span><span class="p">,</span> <span class="n">horizontal_pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">normalized_confusion_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">horizontal_pos</span><span class="p">,</span> <span class="n">vertical_pos</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion matrix; the numbers indicate amounts of datapoints&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="same-but-with-a-multinomial-logistic-regression-model">
+<h3>Same but with a multinomial logistic regression -model<a class="headerlink" href="#same-but-with-a-multinomial-logistic-regression-model" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use scikit-learn to fit the model</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">projected_data</span><span class="p">,</span> <span class="n">feature_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate probabilities, classifications and classification uncertainty with the fitted model</span>
+<span class="n">probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">projected_data</span><span class="p">))</span>
+<span class="n">classification_class</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">class_uncertainty</span> <span class="o">=</span> <span class="n">get_uncertainty_based_on_entropy</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the class uncertainties as measured by the entropies, and also mark the maximum entropy </span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIGSIZE</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">classification_class</span><span class="o">!=</span><span class="n">feature_labels</span><span class="p">],</span> 
+        <span class="n">bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">classification_class</span><span class="o">!=</span><span class="n">feature_labels</span><span class="p">))),</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;incorrect classifications&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">classification_class</span><span class="o">==</span><span class="n">feature_labels</span><span class="p">],</span> 
+        <span class="n">bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">classification_class</span><span class="o">==</span><span class="n">feature_labels</span><span class="p">))),</span> 
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;correct classifications&#39;</span><span class="p">);</span>
+<span class="n">ylim</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">max_entropy</span><span class="p">,</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;maximally entropic distribution&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Entropies of predicted class probabilities&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">################################################################################################</span>
+<span class="c1"># ----------&gt; CHANGE CODE: VARY THIS</span>
+<span class="n">entropy_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">classification_class</span><span class="o">!=</span><span class="n">feature_labels</span><span class="p">])</span> <span class="c1"># &quot;cheat&quot;</span>
+<span class="c1"># &lt;--------- CHANGE CODE: VARY THIS</span>
+<span class="c1">################################################################################################</span>
+
+<span class="n">classification_class_adjusted</span> <span class="o">=</span> <span class="n">classification_class</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">too_uncertain</span> <span class="o">=</span> <span class="n">class_uncertainty</span> <span class="o">&gt;=</span> <span class="n">entropy_threshold</span> 
+<span class="n">classification_class_adjusted</span><span class="p">[</span><span class="n">too_uncertain</span><span class="p">]</span><span class="o">=</span><span class="n">num_subspecies</span>
+
+<span class="c1"># Scatter plotting to visualize classifications </span>
+<span class="c1"># ----------------------------------------------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">FIGSIZE</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">subspecies_index</span><span class="p">,</span> <span class="n">subspecies_label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">):</span>
+    <span class="n">subspecies_rows</span> <span class="o">=</span> <span class="n">feature_labels</span> <span class="o">==</span> <span class="n">subspecies_index</span>
+    <span class="n">num_subspecies_examples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">subspecies_rows</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+               <span class="n">c</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span>
+               <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">class_uncertainty</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">]</span><span class="o">/</span><span class="n">max_entropy</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="p">,</span>
+               <span class="n">edgecolors</span> <span class="o">=</span> <span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">classification_class_adjusted</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">],</span> <span class="p">:]);</span>
+    <span class="n">subspecies_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">centered_subspecies_points</span> <span class="o">=</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">subspecies_rows</span><span class="p">,</span> <span class="p">:]</span><span class="o">-</span><span class="n">subspecies_mean</span>
+    <span class="n">subspecies_covariance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">centered_subspecies_points</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span> 
+                                   <span class="n">centered_subspecies_points</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">num_subspecies_examples</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">equiprobability_points</span> <span class="o">=</span> <span class="n">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">subspecies_mean</span><span class="p">,</span> <span class="n">subspecies_covariance</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+             <span class="n">color</span><span class="o">=</span><span class="n">feature_label_marker_colors</span><span class="p">[</span><span class="n">subspecies_index</span><span class="p">:</span><span class="n">subspecies_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">subspecies_label</span><span class="o">+</span><span class="s1">&#39;-gaussian&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 1&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 2&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data classified: </span><span class="se">\n</span><span class="s1"> colour indicates predicted class, </span><span class="se">\n</span><span class="s1"> certainty in prediction encoded by colour strength, </span><span class="se">\n</span><span class="s1"> black edges indicate too much uncertainty and thus refusal to classify&#39;</span><span class="p">);</span>
+
+<span class="c1"># Confusion matrix to visualize classifications</span>
+<span class="c1"># ----------------------------------------------</span>
+
+<span class="c1"># calculate confusion matrix</span>
+<span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">num_subspecies</span><span class="p">,</span> <span class="n">num_subspecies</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">true_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">classified_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_subspecies</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">confusion_matrix</span><span class="p">[</span><span class="n">true_index</span><span class="p">,</span> <span class="n">classified_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">feature_labels</span> <span class="o">==</span> <span class="n">true_index</span><span class="p">,</span> <span class="n">classification_class_adjusted</span> <span class="o">==</span> <span class="n">classified_index</span><span class="p">))</span>
+<span class="n">normalized_confusion_matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Visualize confusion matrix as an image, gray-scale value encodes the numerical value</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">normalized_confusion_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">),</span> <span class="n">feature_label_names</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> 
+               <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;predicted as &#39;</span><span class="o">+</span><span class="n">feature_label_name</span> <span class="k">for</span> <span class="n">feature_label_name</span> <span class="ow">in</span> <span class="n">feature_label_names</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;too uncertain to classify&#39;</span><span class="p">])</span>
+
+<span class="c1"># Append text annotations to show also the numerical values in textual format</span>
+<span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">vertical_pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">jj</span><span class="p">,</span> <span class="n">horizontal_pos</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="mf">0.5</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_label_names</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">normalized_confusion_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">textcolor</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">horizontal_pos</span><span class="p">,</span> <span class="n">vertical_pos</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion matrix; the numbers indicate amounts of datapoints&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h3>Answer<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Input your answers to the cell below.</p>
+</section>
+</section>
+<section id="u-task-5-clustering-data-u">
+<h2><u> Task 5: Clustering data </u><a class="headerlink" href="#u-task-5-clustering-data-u" title="Permalink to this headline">#</a></h2>
+<p>Here we fit Gaussian mixture models (GMMs) to the projected data, and assess clustering that can be done
+by them. The probability density function (pdf) of a GMM, is a weighted sum of Gaussian pdfs with each Gaussian representing
+a mixture component, and the mixture component weights are non-negative, sum to one, and provide the probabilities of observing the components. The fitting of the model parameters (means, covariances and mixture weights of the component Gaussians) is done by uting the scikit-learn library.</p>
+<p>One a model is fitted, we here assign a data point to a component/cluster, by finding which
+of the components (say with index from 1 to K, under a GMM with K components) gives the highest posterior probability <span class="math notranslate nohighlight">\(p(Z=z|\boldsymbol{X}=\boldsymbol{x})\)</span> which is proportional to <span class="math notranslate nohighlight">\(p(Z=z)p(\boldsymbol{X}=\boldsymbol{x}|Z=z)\)</span>, where
+<span class="math notranslate nohighlight">\(Z\)</span> is a discrete random variable that indicates component index, <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> is multivariate random variable that indicates the coordinates of the data point; <span class="math notranslate nohighlight">\(p(Z=z)\)</span> is given by the mixture component weight of component <span class="math notranslate nohighlight">\(z\)</span>, and
+the <span class="math notranslate nohighlight">\(p(\boldsymbol{X}=\boldsymbol{x}|Z=z)\)</span> is given by the pdf of the z-component -specific multivariate normal distribution.</p>
+<p>The codes below do the fitting as well as visualization of the clustering results. The clustering results are shown in the projected space (where the model fitting and inference happens), and also in the original space via seaborn.pairplot; in the projected space information about the component uncertainty is provided, numerically by one minus, the entropy of the distribution of <span class="math notranslate nohighlight">\(Z|\boldsymbol{X}\)</span> divided by the maximum possible entropy.</p>
+<p>Fit a gaussian mixture model with a varying amount of components, from 4 to 2; different runs may result in different results - sometimes there might be numerical issues due to the implementation, but don’t worry about such. Assess if it is possible to get groups that effectively correspond to the subspecies-specific datapoints, robustly.</p>
+<p>In the ‘Answer’-section, briefly, provide your assessment results, and comment on at least some potential benefits in doing the clustering in the projected (lower-dimensional) space vs. directly in the (higher-dimensional) original space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">################################################################################################</span>
+<span class="c1"># ----------&gt; CHANGE CODE: VARY THIS</span>
+<span class="n">num_components</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># &lt;--------- CHANGE CODE: VARY THIS</span>
+<span class="c1">################################################################################################</span>
+
+
+<span class="c1"># Fit a Gaussian mixture model</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">gmm</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">num_components</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">projected_data</span><span class="p">)</span>
+
+<span class="c1"># Calculate component probabilities, assignments to components, and entropies, with the model</span>
+<span class="c1"># -------------------------------------------------------------------------------------------</span>
+<span class="n">component_likelihoods</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">gmm</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">projected_data</span><span class="p">))</span>
+<span class="n">unnormalized_posterior_probabilities</span> <span class="o">=</span> <span class="n">component_likelihoods</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">gmm</span><span class="o">.</span><span class="n">weights_</span><span class="p">,</span> <span class="p">[</span><span class="n">num_components</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">normalized_posterior_probabilities</span> <span class="o">=</span> <span class="n">unnormalized_posterior_probabilities</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">unnormalized_posterior_probabilities</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">component_assignment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">normalized_posterior_probabilities</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">component_uncertainty</span> <span class="o">=</span> <span class="n">get_uncertainty_based_on_entropy</span><span class="p">(</span><span class="n">normalized_posterior_probabilities</span><span class="p">)</span>
+
+<span class="c1"># Scatter plotting to visualize classifications </span>
+<span class="c1"># ----------------------------------------------</span>
+<span class="n">marker_colours</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">marker_colours</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">marker_colours</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">marker_colours</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">marker_colours</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">FIGSIZE</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">component_index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_components</span><span class="p">):</span>
+    <span class="n">component_rows</span> <span class="o">=</span> <span class="n">component_assignment</span> <span class="o">==</span> <span class="n">component_index</span>
+    <span class="n">num_component_examples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">component_rows</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">projected_data</span><span class="p">[</span><span class="n">component_rows</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">projected_data</span><span class="p">[</span><span class="n">component_rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+               <span class="n">c</span> <span class="o">=</span> <span class="n">marker_colours</span><span class="p">[</span><span class="n">component_index</span><span class="p">:</span><span class="n">component_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span>
+               <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">component_uncertainty</span><span class="p">[</span><span class="n">component_rows</span><span class="p">]</span><span class="o">/</span><span class="n">max_entropy</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;component </span><span class="si">{</span><span class="n">component_index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+               <span class="n">edgecolors</span> <span class="o">=</span> <span class="n">marker_colours</span><span class="p">[</span><span class="n">component_assignment</span><span class="p">[</span><span class="n">component_rows</span><span class="p">],</span> <span class="p">:]);</span>
+    <span class="n">component_mean</span> <span class="o">=</span> <span class="n">gmm</span><span class="o">.</span><span class="n">means_</span><span class="p">[</span><span class="n">component_index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">component_covariance</span> <span class="o">=</span> <span class="n">gmm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="n">component_index</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">equiprobability_points</span> <span class="o">=</span> <span class="n">get_2D_gaussian_equiprobability_points</span><span class="p">(</span><span class="n">component_mean</span><span class="p">,</span> <span class="n">component_covariance</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">equiprobability_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+             <span class="n">color</span><span class="o">=</span><span class="n">marker_colours</span><span class="p">[</span><span class="n">component_index</span><span class="p">:</span><span class="n">component_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> 
+             <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;component </span><span class="si">{</span><span class="n">component_index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> std from mean&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 1&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;projection dimension 2&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projected data clustered: </span><span class="se">\n</span><span class="s1"> colour indicates most likely cluster/component, </span><span class="se">\n</span><span class="s1"> certainty in component encoded by colour strength&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;component&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">component_assignment</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot a pairplot by using the clustering information</span>
+<span class="n">pairplot_original_clustered</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature_names</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;component&#39;</span><span class="p">]],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;component&quot;</span><span class="p">,</span> 
+                                           <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span> <span class="n">num_components</span><span class="p">],</span> 
+                                           <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">diag_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Original data with colouring by the clustering&#39;</span><span class="p">);</span>
+
+<span class="c1"># compare to the original</span>
+<span class="n">pairplot_original_clustered</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature_names</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;subspecies&#39;</span><span class="p">]],</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;subspecies&quot;</span><span class="p">,</span> 
+                                           <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">diag_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Original data with colouring by the subspecies&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id5">
+<h3>Answer<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>Input your answers to the cell below.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
